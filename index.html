@@ -1103,7 +1103,7 @@
       box-shadow: inset 0 1px 0 #8a9674;
     }
     .retro-theme .lcd-min {
-      display: block; position: absolute; left: 8px; top: 50%; margin-top: 2px;
+      display: block; position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
       font: 600 11px/1 var(--sans); color: #1a1e14; opacity: .55;
     }
     .retro-theme .pomo-center {
@@ -1219,8 +1219,8 @@
     .di-card.hud-theme[data-w="pomo"] { width: 280px; min-height: 254px; }
     .hud-theme .pomo-clean .pomo-ring { width: 146px; height: 146px; }
     .hud-theme .pomo-tomato { display: none; }
-    .hud-theme .ring-track { stroke: #ff2637; stroke-opacity: 0.22; stroke-width: 2.5; stroke-dasharray: 1.2 3.4; }
-    .hud-theme .ring-fill { stroke: #ff2637; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(255, 38, 55, 0.44)); stroke-linecap: butt; }
+    .hud-theme .ring-track { stroke: #ff2637; stroke-opacity: 0.2; stroke-width: 3; stroke-dasharray: none; }
+    .hud-theme .ring-fill { stroke: #ff2637; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(255, 38, 55, 0.44)); stroke-linecap: round; }
     .hud-theme .pomo-time {
       font-family: var(--mono); font-size: 30px; font-weight: 700;
       letter-spacing: 0.08em; color: #ff3042; text-shadow: 0 0 12px rgba(255, 30, 48, 0.32);
@@ -1241,9 +1241,7 @@
     .hud-readout { display: none; }
     .hud-theme .hud-readout { display: none; }
     .hud-cluster { display: none; }
-    .hud-theme .hud-cluster {
-      display: grid; grid-template-columns: 56px 1fr 72px; gap: 8px; width: 220px; height: 96px; margin: 0 auto 8px;
-    }
+    .hud-theme .hud-cluster { display: none; }
     .hud-theme .hud-gauge {
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
       background: #140206; border: 1px solid #ff2637; border-radius: 8px; color: #ff3042;
@@ -1256,7 +1254,7 @@
     .hud-theme .hud-bars i:nth-child(2) { width: 82%; }
     .hud-theme .hud-bars i:nth-child(3) { width: 64%; opacity: .7; }
     .hud-theme .hud-bars i:nth-child(4) { width: 46%; opacity: .4; }
-    .hud-theme .pomo-ring, .hud-theme .pomo-play { display: none; }
+    .hud-theme .pomo-ring, .hud-theme .pomo-play { display: grid; }
     .hud-theme .pomo-clean > :not(.hud-readout) { position: relative; z-index: 1; }
     .hud-topline {
       position: absolute; left: 0; right: 0; top: 29px;
