@@ -844,7 +844,7 @@
     .mini-notch-big .pomo-center { font-size: 27px; }
     .pomo.break .pomo-center { color: var(--warn); text-shadow: 0 0 14px rgba(255, 179, 71, 0.4); }
     .pomo-side { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-    .pomo-dots { display: flex; gap: 6px; }
+    .pomo-dots { display: none; gap: 6px; }
     .pomo-dots i {
       width: 9px; height: 9px; border-radius: 50%;
       border: 1px solid var(--hair-2); background: transparent;
@@ -874,6 +874,7 @@
 
     /* ── clean pomodoro (feature section) — big ring, tomato, one pill row ── */
     .pomo-clean { flex-direction: column; align-items: center; gap: 0; width: 100%; }
+    .pomo-title, .di-card[data-w="pomo"] .di-card-head { display: none; }
     .pomo-title {
       font-family: var(--display); font-size: 14px; font-weight: 600;
       color: var(--ntext); text-align: center; margin: 0 0 12px;
@@ -1143,8 +1144,13 @@
     .terminal-theme .pomo-center { position: relative; inset: auto; width: 100%; height: 100%; display: grid; place-items: center; text-shadow: none; }
     .terminal-theme .pomo-time { font-family: "VT323",var(--mono); font-size: 42px; font-weight: 400; color: #34472f; text-shadow: none; margin-top: -16px; }
     .terminal-theme .pomo-state { display: none; }
-    .terminal-theme .pomo-terminal-bar { display: grid; height: 40px; margin-top: 7px; }
-    .terminal-theme .pomo-terminal-bar button { text-align: center; font-weight: 600; font-size: 11px; }
+    .terminal-theme .pomo-terminal-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; height: 40px; margin-top: 7px; }
+    .terminal-theme .pomo-terminal-bar button,
+    .terminal-theme .pomo-clean .pomo-terminal-bar .pomo-start {
+      width: 100%; height: 40px; min-width: 0; min-height: 40px; margin: 0; padding: 0;
+      display: grid; place-items: center; text-align: center; font: 600 11px/1 var(--sans);
+      border-radius: 10px; border-width: 1px; border-style: solid;
+    }
     .terminal-theme .term-speaker { display: block; }
     .terminal-theme .pomo-dots { display: none; }
     .terminal-theme .pmode { color: #5c5d5b; background: transparent; border: 0; }
@@ -1232,8 +1238,25 @@
       color: #ff3042; font-family: var(--mono); letter-spacing: 0.08em;
       animation: hud-glitch 5.2s steps(1, end) infinite;
     }
-    .hud-readout { display: none; position: absolute; inset: 0; pointer-events: none; color: #ff3042; font-family: var(--mono); z-index: 0; }
-    .hud-theme .hud-readout { display: block; }
+    .hud-readout { display: none; }
+    .hud-theme .hud-readout { display: none; }
+    .hud-cluster { display: none; }
+    .hud-theme .hud-cluster {
+      display: grid; grid-template-columns: 56px 1fr 72px; gap: 8px; width: 220px; height: 96px; margin: 0 auto 8px;
+    }
+    .hud-theme .hud-gauge {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      background: #140206; border: 1px solid #ff2637; border-radius: 8px; color: #ff3042;
+      font: 700 8px/1 var(--mono); letter-spacing: .08em;
+    }
+    .hud-theme .hud-gauge b { font-size: 28px; font-weight: 700; letter-spacing: 0; }
+    .hud-theme .hud-clock { font-size: 16px; letter-spacing: 0.04em; }
+    .hud-theme .hud-bars { width: 36px; display: grid; gap: 4px; }
+    .hud-theme .hud-bars i { display: block; height: 4px; background: #ff2637; border-radius: 1px; }
+    .hud-theme .hud-bars i:nth-child(2) { width: 82%; }
+    .hud-theme .hud-bars i:nth-child(3) { width: 64%; opacity: .7; }
+    .hud-theme .hud-bars i:nth-child(4) { width: 46%; opacity: .4; }
+    .hud-theme .pomo-ring, .hud-theme .pomo-play { display: none; }
     .hud-theme .pomo-clean > :not(.hud-readout) { position: relative; z-index: 1; }
     .hud-topline {
       position: absolute; left: 0; right: 0; top: 29px;
@@ -1615,7 +1638,7 @@
     .feature-shot .mini-body.retro-theme .pomo-clean .pomo-ring { width: 196px; height: 84px; }
     .feature-shot .mini-body.terminal-theme .pomo-clean .pomo-ring { width: 204px; height: 124px; }
     .feature-shot .pomo-clean .pomo-time { font-size: 28px; }
-    .pomo-retro-bar { display: none; align-items: center; justify-content: space-between; width: 100%; height: 62px; padding: 0 6px; }
+    .pomo-retro-bar { display: none; align-items: center; justify-content: center; gap: 36px; width: 100%; height: 62px; padding: 0; }
     .pomo-lever {
       width: 52px; height: 62px; padding: 0; border: 0; background: none; position: relative;
     }
@@ -2283,14 +2306,10 @@
                   <span class="di-card-title">Deep Focus</span>
                 </div>
                 <div class="pomo pomo-clean">
-                  <div class="hud-readout" aria-hidden="true">
-                    <div class="hud-topline"><span><b>R</b> / 100</span><span>FUEL <b>084</b></span></div>
-                    <div class="hud-fuel"><i></i><i></i><i></i><i></i></div>
-                    <svg class="hud-graph" viewBox="0 0 31 38">
-                      <path class="ghost" d="M0 7H31M0 19H31M0 31H31"/>
-                      <path d="M0 29 5 25 9 28 14 12 18 20 23 8 27 15 31 5"/>
-                    </svg>
-                    <div class="hud-footline"><span>CORE // SYNC</span><span>SYS 24.08</span></div>
+                  <div class="hud-cluster" aria-hidden="true">
+                    <div class="hud-gauge"><span>FUEL</span><div class="hud-bars"><i></i><i></i><i></i><i></i></div></div>
+                    <div class="hud-gauge"><span>TACH</span><b>R</b></div>
+                    <div class="hud-gauge"><span>MPH</span><span class="hud-clock">25:00</span></div>
                   </div>
                   <div class="pomo-ring">
                     <svg viewBox="0 0 128 128" aria-hidden="true">
@@ -2524,14 +2543,10 @@ console.log(sessions);</textarea>
         </div>
         <div class="mini-body" data-w="pomo">
             <div class="pomo pomo-clean">
-            <div class="hud-readout" aria-hidden="true">
-              <div class="hud-topline"><span><b>R</b> / 100</span><span>FUEL <b>084</b></span></div>
-              <div class="hud-fuel"><i></i><i></i><i></i><i></i></div>
-              <svg class="hud-graph" viewBox="0 0 31 38">
-                <path class="ghost" d="M0 7H31M0 19H31M0 31H31"/>
-                <path d="M0 29 5 25 9 28 14 12 18 20 23 8 27 15 31 5"/>
-              </svg>
-              <div class="hud-footline"><span>CORE // SYNC</span><span>SYS 24.08</span></div>
+            <div class="hud-cluster" aria-hidden="true">
+              <div class="hud-gauge"><span>FUEL</span><div class="hud-bars"><i></i><i></i><i></i><i></i></div></div>
+              <div class="hud-gauge"><span>TACH</span><b>R</b></div>
+              <div class="hud-gauge"><span>MPH</span><span class="hud-clock">25:00</span></div>
             </div>
             <div class="pomo-title">Deep Focus</div>
             <div class="pomo-ring">
@@ -3261,6 +3276,8 @@ console.log(hits);</textarea>
           time.textContent = `${pad(Math.floor(left / 60))}:${pad(Math.floor(left % 60))}`;
           ring.style.strokeDashoffset = RING_C * (1 - left / total);
           pomo.classList.toggle("break", mode !== "focus");
+          const hudClock = $(".hud-clock", pomo);
+          if (hudClock) hudClock.textContent = `${pad(Math.floor(left / 60))}:${pad(Math.floor(left % 60))}`;
           const termStart = $(".terminal-start", pomo);
           if (termStart) termStart.textContent = running ? "PAUSE" : "START";
           if (isClean && startBtn) {
