@@ -282,9 +282,19 @@
       border-style: solid; border-width: 12px 0 12px 20px;
       border-color: transparent transparent transparent #06140d;
     }
-    .island-lab {
-      position: absolute; width: 1px; height: 1px; overflow: hidden;
-      clip: rect(0 0 0 0); white-space: nowrap;
+    .island-lab,
+    .desktop-demo.island-lab {
+      display: none !important;
+      position: absolute !important;
+      width: 0 !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      overflow: hidden !important;
+      background: none !important;
+      box-shadow: none !important;
+      pointer-events: none;
     }
     .mini-tab { display: none !important; }
     .btn {
