@@ -24,7 +24,7 @@
       } catch {}
     })();
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Doto:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Manrope:wght@400;500;600;700;800&family=Doto:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
   <style>
     /* ============================================================
        BuildNotch — Freebuff-clean dark · Inter Tight · green phosphor island
@@ -56,7 +56,7 @@
       --warn: #ffb347;
       --mono: "JetBrains Mono", ui-monospace, monospace;
       --sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-      --display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      --display: "Manrope", "DM Sans", ui-sans-serif, system-ui, sans-serif;
       --pixel: "Geist Pixel Square", "Pixelify Sans", ui-monospace, monospace;
       --wash: radial-gradient(125% 125% at 50% 90%, var(--page) 40%, var(--green) 100%);
     }
@@ -2122,6 +2122,49 @@
     html[data-theme="light"] .price-ico { background: rgba(16,18,22,0.06); }
     html[data-theme="light"] .price-buy { background: #14161c; color: #fff; }
     html[data-theme="light"] .price-dl { background: #f3f4f6; }
+    .waitlist { padding: 64px 24px 120px; }
+    .waitlist-card {
+      width: min(680px, 100%); margin: 0 auto; padding: 48px;
+      text-align: center; border: 1px solid var(--hair-2); border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      box-shadow: 0 24px 80px rgba(0,0,0,.24);
+    }
+    .waitlist-kicker {
+      display: inline-flex; align-items: center; gap: 7px; margin-bottom: 18px;
+      color: var(--green); font: 700 11px/1 var(--display); letter-spacing: .12em; text-transform: uppercase;
+    }
+    .waitlist-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .waitlist-card h2 {
+      font: 700 clamp(30px, 5vw, 48px)/1.08 var(--display);
+      letter-spacing: -.04em; color: var(--text);
+    }
+    .waitlist-card > p {
+      max-width: 500px; margin: 16px auto 28px; color: var(--dim);
+      font: 500 15px/1.6 var(--sans);
+    }
+    .waitlist-form {
+      display: grid; grid-template-columns: 1fr auto; gap: 10px;
+      width: min(480px, 100%); margin: 0 auto;
+    }
+    .waitlist-form input {
+      min-width: 0; height: 50px; padding: 0 16px;
+      color: var(--text); background: rgba(255,255,255,.055);
+      border: 1px solid var(--hair-2); border-radius: 12px;
+      outline: none; font: 500 14px/1 var(--sans);
+    }
+    .waitlist-form input:focus { border-color: rgba(62,207,142,.7); box-shadow: 0 0 0 3px rgba(62,207,142,.12); }
+    .waitlist-form button {
+      height: 50px; padding: 0 20px; border: 0; border-radius: 12px;
+      color: #07110c; background: var(--green); cursor: pointer;
+      font: 700 13px/1 var(--display);
+    }
+    .waitlist-note { display: block; margin-top: 14px; color: var(--faint); font: 500 11px/1.4 var(--sans); }
+    html[data-theme="light"] .waitlist-card { background: #fff; box-shadow: 0 24px 80px rgba(22,28,36,.08); }
+    html[data-theme="light"] .waitlist-form input { color: #111319; background: #f5f6f7; }
+    @media (max-width: 560px) {
+      .waitlist-card { padding: 36px 20px; }
+      .waitlist-form { grid-template-columns: 1fr; }
+    }
     .wl-rig {
       margin-top: 40px;
       display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
@@ -2208,8 +2251,8 @@
         <img class="icon-sun" src="assets/theme-sun.png" alt="" />
         <img class="icon-moon" src="assets/theme-moon.png" alt="" />
       </button>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#pricing" class="nav-cta">Download for Windows</a>
+      <a href="#waitlist" class="nav-link">Waitlist</a>
+      <a href="#waitlist" class="nav-cta">Join the waitlist</a>
     </nav>
   </header>
   <script>
@@ -2243,7 +2286,7 @@
       One hover away, on your Windows.
     </p>
     <div class="hero-ctas">
-      <a href="#pricing" class="btn btn-dark" id="buyBtn">Download for Windows</a>
+      <a href="#waitlist" class="btn btn-dark" id="buyBtn">Join the waitlist</a>
       <a href="#demo" class="btn btn-quiet">See it work ↓</a>
     </div>
     <div class="demo-stage" id="demo">
@@ -2697,36 +2740,16 @@ console.log(hits);</textarea>
   </section>
 
   <!-- ===== WAITLIST ===== -->
-  <section class="pricing" id="pricing">
-    <article class="price-card">
-      <div class="price-top">
-        <span class="price-ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect fill="#00A4EF" x="1" y="1" width="10.2" height="10.2"/>
-            <rect fill="#00A4EF" x="12.8" y="1" width="10.2" height="10.2"/>
-            <rect fill="#00A4EF" x="1" y="12.8" width="10.2" height="10.2"/>
-            <rect fill="#00A4EF" x="12.8" y="12.8" width="10.2" height="10.2"/>
-          </svg>
-        </span>
-        <div>
-          <h2>Lifetime license</h2>
-          <p>Your everyday workspace on Windows. Pay once.</p>
-        </div>
-      </div>
-      <div class="price-row">
-        <span class="price-amt">$3.49</span>
-        <span class="price-meta">USD</span>
-      </div>
-      <hr />
-      <ul class="price-list">
-        <li>Use on any device</li>
-        <li>Access to future updates</li>
-        <li>Every BuildNotch functionality</li>
-      </ul>
-      <hr />
-      <div class="price-actions">
-        <a class="price-buy" id="buyWall" href="https://apps.microsoft.com/search?query=BuildNotch" target="_blank" rel="noopener">Buy lifetime license</a>
-      </div>
+  <section class="waitlist" id="waitlist">
+    <article class="waitlist-card">
+      <span class="waitlist-kicker">Early access</span>
+      <h2>Be first at the notch.</h2>
+      <p>Join the BuildNotch waitlist for launch news, early access, and the first Windows release.</p>
+      <form class="waitlist-form" id="waitlistForm" method="POST" onsubmit="event.preventDefault()">
+        <input type="email" name="email" autocomplete="email" placeholder="you@example.com" aria-label="Email address" required />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <span class="waitlist-note">One useful email when it is ready. No spam.</span>
     </article>
   </section>
 
