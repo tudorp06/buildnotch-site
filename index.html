@@ -24,7 +24,10 @@
       } catch {}
     })();
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Manrope:wght@400;500;600;700;800&family=Doto:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     /* ============================================================
        BuildNotch — Freebuff-clean dark · Inter Tight · green phosphor island
@@ -281,20 +284,6 @@
       content: ""; position: absolute; left: 25px; top: 20px;
       border-style: solid; border-width: 12px 0 12px 20px;
       border-color: transparent transparent transparent #06140d;
-    }
-    .island-lab,
-    .desktop-demo.island-lab {
-      display: none !important;
-      position: absolute !important;
-      width: 0 !important;
-      height: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      border: 0 !important;
-      overflow: hidden !important;
-      background: none !important;
-      box-shadow: none !important;
-      pointer-events: none;
     }
     .mini-tab { display: none !important; }
     .btn {
@@ -2383,10 +2372,7 @@
     <div class="hero-ctas">
       <a href="#demo" class="btn btn-quiet">See it work ↓</a>
     </div>
-    <div class="demo-stage" id="demo">
-      <video id="demoReel" playsinline autoplay muted loop preload="auto" src="./demonotch.mp4"></video>
-    </div>
-    <div class="desktop-demo island-lab" aria-hidden="true">
+    <div class="desktop-demo" id="demo">
       <div class="desktop-wall" aria-hidden="true">
         <div class="win-mark"><i></i><i></i><i></i><i></i></div>
         <div class="win-taskbar">
