@@ -1199,25 +1199,17 @@
     .mini-body.hud-theme,
     .di-card.hud-theme {
       position: relative; overflow: hidden;
-      background-color: #050506;
-      background-image:
-        linear-gradient(rgba(255, 37, 52, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 37, 52, 0.025) 1px, transparent 1px);
-      background-size: 18px 18px;
-      border: 1px solid #7d1720;
-      border-radius: 8px;
-      box-shadow: inset 0 0 34px rgba(255, 25, 42, 0.045);
+      background: #070708;
+      border: 1px solid rgba(255, 48, 66, 0.42);
+      border-radius: 20px;
+      box-shadow: none;
     }
     .mini-body.hud-theme::before,
-    .di-card.hud-theme::before {
-      content: ""; position: absolute; inset: 7px; pointer-events: none;
-      border: 1px solid rgba(255, 43, 57, 0.13);
-      clip-path: polygon(0 0, 36px 0, 36px 1px, calc(100% - 36px) 1px, calc(100% - 36px) 0, 100% 0, 100% 30px, calc(100% - 1px) 30px, calc(100% - 1px) calc(100% - 30px), 100% calc(100% - 30px), 100% 100%, calc(100% - 36px) 100%, calc(100% - 36px) calc(100% - 1px), 36px calc(100% - 1px), 36px 100%, 0 100%, 0 calc(100% - 30px), 1px calc(100% - 30px), 1px 30px, 0 30px);
-    }
+    .di-card.hud-theme::before { display: none; }
     .hud-theme .pomo-clean { position: relative; isolation: isolate; }
-    .feature-shot .mini-body.hud-theme[data-w="pomo"] { width: 320px; min-height: 304px; padding: 18px 20px 14px; }
-    .di-card.hud-theme[data-w="pomo"] { width: 280px; min-height: 254px; }
-    .hud-theme .pomo-clean .pomo-ring { width: 146px; height: 146px; }
+    .feature-shot .mini-body.hud-theme[data-w="pomo"] { width: 240px; min-height: 260px; padding: 16px 16px 12px; }
+    .di-card.hud-theme[data-w="pomo"] { width: 240px; min-height: 236px; }
+    .hud-theme .pomo-clean .pomo-ring { width: 128px; height: 128px; }
     .hud-theme .pomo-tomato { display: none; }
     .hud-theme .ring-track { stroke: #ff2637; stroke-opacity: 0.2; stroke-width: 3; stroke-dasharray: none; }
     .hud-theme .ring-fill { stroke: #ff2637; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(255, 38, 55, 0.44)); stroke-linecap: round; }
@@ -1229,10 +1221,10 @@
       font: 700 10px/1 var(--mono); letter-spacing: 0.2em; color: #d23240;
     }
     .hud-theme .pomo-start {
-      border: 1px solid #ff2637; border-radius: 2px; background: #160508; color: #ff3042;
+      border: 1px solid rgba(255, 48, 66, 0.55); border-radius: 8px; background: transparent; color: #ff3042;
     }
-    .hud-theme .pmode { color: #a92430; border-color: rgba(255, 38, 55, 0.22); border-radius: 2px; background: transparent; }
-    .hud-theme .pmode.active { background: #ff2637; color: #070405; border-color: #ff2637; }
+    .hud-theme .pmode { color: #a92430; border: 0; border-radius: 8px; background: transparent; }
+    .hud-theme .pmode.active { background: #ff2637; color: #070405; border: 0; }
     .hud-theme .pomo-title,
     .hud-theme .di-card-title {
       color: #ff3042; font-family: var(--mono); letter-spacing: 0.08em;
@@ -3180,7 +3172,7 @@ console.log(hits);</textarea>
       /* ---------- quick dock ---------- */
       const AI_APPS = [
         { name: "ChatGPT", logo: "chatgpt" },
-        { name: "Claude", src: "assets/claude-logo.jpg" },
+        { name: "Claude", src: "assets/claude-logo.png" },
         { name: "Cursor", src: "https://cdn.simpleicons.org/cursor/FFFFFF" },
         { name: "Add", asset: PHOSPHOR.plus },
       ];
