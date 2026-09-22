@@ -1645,6 +1645,13 @@
       width: 100%;
       justify-content: center;
     }
+    .retro-theme .pomo-retro-bar {
+      margin-top: auto;
+    }
+    .retro-theme .pomo-controls {
+      margin-top: 0;
+      padding-top: 6px;
+    }
     .feature-shot .pomo-clean .pomo-ring { width: 128px; height: 128px; }
     .feature-shot .mini-body.retro-theme .pomo-clean .pomo-ring { width: 196px; height: 84px; }
     .feature-shot .mini-body.terminal-theme .pomo-clean .pomo-ring { width: 204px; height: 124px; }
@@ -2179,7 +2186,9 @@
       color: #07110c; background: var(--green); cursor: pointer;
       font: 700 13px/1 var(--display);
     }
-    .waitlist-note { display: block; margin-top: 14px; color: var(--faint); font: 500 11px/1.4 var(--sans); }
+    .waitlist-form button:disabled { cursor: default; opacity: .78; }
+    .waitlist-status { min-height: 18px; margin-top: 12px; color: var(--dim); font: 600 12px/1.4 var(--sans); }
+    .waitlist-status:empty { display: none; }
     html[data-theme="light"] .waitlist-card { background: #fff; box-shadow: 0 24px 80px rgba(22,28,36,.08); }
     html[data-theme="light"] .waitlist-form input { color: #111319; background: #f5f6f7; }
     @media (max-width: 560px) {
@@ -2823,7 +2832,7 @@ console.log(hits);</textarea>
         <input type="email" name="email" autocomplete="email" placeholder="you@example.com" aria-label="Email address" required />
         <button type="submit">Join the waitlist</button>
       </form>
-      <span class="waitlist-note">One useful email when it is ready. No spam.</span>
+      <p class="waitlist-status" id="waitlistStatus" role="status" aria-live="polite"></p>
     </article>
   </section>
 
@@ -2838,6 +2847,33 @@ console.log(hits);</textarea>
       /* ---------- helpers ---------- */
       const $ = (sel, root = document) => root.querySelector(sel);
       const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+      const waitlistForm = $("#waitlistForm");
+      if (waitlistForm) {
+        waitlistForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const button = $("button[type='submit']", waitlistForm);
+          const status = $("#waitlistStatus");
+          const originalLabel = button.textContent;
+          button.disabled = true;
+          button.textContent = "Joining…";
+          status.textContent = "";
+          try {
+            const response = await fetch(waitlistForm.action, {
+              method: "POST",
+              body: new FormData(waitlistForm),
+              headers: { Accept: "application/json" }
+            });
+            if (!response.ok) throw new Error("Submission failed");
+            waitlistForm.reset();
+            button.textContent = "You're on the list";
+            status.textContent = "Thanks — we’ll let you know when BuildNotch is ready.";
+          } catch {
+            button.disabled = false;
+            button.textContent = originalLabel;
+            status.textContent = "Couldn’t join right now. Please try again.";
+          }
+        });
+      }
       const PHOSPHOR = {
         play: "src-winui/Assets/play.png",
         pause: "src-winui/Assets/pause.png",
