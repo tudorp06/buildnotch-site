@@ -1,0 +1,752 @@
+[
+  {
+    "author": "Linus Torvalds",
+    "text": "Talk is cheap. Show me the code.",
+    "code": true
+  },
+  {
+    "author": "Kent Beck",
+    "text": "Make it work, make it right, make it fast.",
+    "code": true
+  },
+  {
+    "author": "Donald Knuth",
+    "text": "Premature optimization is the root of all evil.",
+    "code": true
+  },
+  {
+    "author": "John Johnson",
+    "text": "First, solve the problem. Then, write the code.",
+    "code": true
+  },
+  {
+    "author": "Robert C. Martin",
+    "text": "The only way to go fast is to go well.",
+    "code": true
+  },
+  {
+    "author": "Harold Abelson",
+    "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+    "code": true
+  },
+  {
+    "author": "Steve Jobs",
+    "text": "Real artists ship.",
+    "code": false
+  },
+  {
+    "author": "Steve Jobs",
+    "text": "Stay hungry. Stay foolish.",
+    "code": false
+  },
+  {
+    "author": "Steve Jobs",
+    "text": "Design is not just what it looks like. Design is how it works.",
+    "code": false
+  },
+  {
+    "author": "Steve Jobs",
+    "text": "Innovation distinguishes between a leader and a follower.",
+    "code": false
+  },
+  {
+    "author": "Sheryl Sandberg",
+    "text": "Done is better than perfect.",
+    "code": false
+  },
+  {
+    "author": "John Carmack",
+    "text": "Focus is a matter of deciding what things you're not going to do.",
+    "code": false
+  },
+  {
+    "author": "Martin Fowler",
+    "text": "If it hurts, do it more often.",
+    "code": true
+  },
+  {
+    "author": "Kent Beck",
+    "text": "Make the change easy, then make the easy change.",
+    "code": true
+  },
+  {
+    "author": "Phil Karlton",
+    "text": "There are only two hard things in computer science: cache invalidation and naming things.",
+    "code": true
+  },
+  {
+    "author": "Grace Hopper",
+    "text": "The most dangerous phrase is: we've always done it this way.",
+    "code": false
+  },
+  {
+    "author": "Grace Hopper",
+    "text": "One accurate measurement is worth a thousand expert opinions.",
+    "code": false
+  },
+  {
+    "author": "Steve Krug",
+    "text": "Don't make me think.",
+    "code": false
+  },
+  {
+    "author": "Dieter Rams",
+    "text": "Good design is as little design as possible.",
+    "code": false
+  },
+  {
+    "author": "Antoine de Saint-Exupéry",
+    "text": "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.",
+    "code": false
+  },
+  {
+    "author": "Leonardo da Vinci",
+    "text": "Simplicity is the ultimate sophistication.",
+    "code": false
+  },
+  {
+    "author": "Marcus Aurelius",
+    "text": "What we do now echoes in eternity.",
+    "code": false
+  },
+  {
+    "author": "Marcus Aurelius",
+    "text": "The obstacle is the way.",
+    "code": false
+  },
+  {
+    "author": "Marcus Aurelius",
+    "text": "Waste no more time arguing what a good man should be. Be one.",
+    "code": false
+  },
+  {
+    "author": "Seneca",
+    "text": "We suffer more in imagination than in reality.",
+    "code": false
+  },
+  {
+    "author": "Seneca",
+    "text": "Luck is what happens when preparation meets opportunity.",
+    "code": false
+  },
+  {
+    "author": "Epictetus",
+    "text": "No man is free who is not master of himself.",
+    "code": false
+  },
+  {
+    "author": "Will Durant",
+    "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    "code": false
+  },
+  {
+    "author": "Antoine de Saint-Exupéry",
+    "text": "A goal without a plan is just a wish.",
+    "code": false
+  },
+  {
+    "author": "Mark Twain",
+    "text": "The secret of getting ahead is getting started.",
+    "code": false
+  },
+  {
+    "author": "Nelson Mandela",
+    "text": "It always seems impossible until it's done.",
+    "code": false
+  },
+  {
+    "author": "Theodore Roosevelt",
+    "text": "Do what you can, with what you have, where you are.",
+    "code": false
+  },
+  {
+    "author": "Thomas Edison",
+    "text": "I have not failed. I've just found 10,000 ways that won't work.",
+    "code": false
+  },
+  {
+    "author": "Henry Ford",
+    "text": "Whether you think you can, or you think you can't, you're right.",
+    "code": false
+  },
+  {
+    "author": "Benjamin Franklin",
+    "text": "An investment in knowledge pays the best interest.",
+    "code": false
+  },
+  {
+    "author": "Albert Einstein",
+    "text": "If you can't explain it simply, you don't understand it well enough.",
+    "code": false
+  },
+  {
+    "author": "David Allen",
+    "text": "You can do anything, but not everything.",
+    "code": false
+  },
+  {
+    "author": "Jocko Willink",
+    "text": "Discipline equals freedom.",
+    "code": false
+  },
+  {
+    "author": "Shigeru Miyamoto",
+    "text": "A delayed game is eventually good. A bad game is bad forever.",
+    "code": true
+  },
+  {
+    "author": "Charles Eames",
+    "text": "The details are not the details. They make the design.",
+    "code": false
+  },
+  {
+    "author": "Martin LeBlanc",
+    "text": "A user interface is like a joke. If you have to explain it, it isn't that good.",
+    "code": true
+  },
+  {
+    "author": "Paul Graham",
+    "text": "The way to get startup ideas is not to try to think of startup ideas.",
+    "code": false
+  },
+  {
+    "author": "Paul Graham",
+    "text": "Make something people want.",
+    "code": false
+  },
+  {
+    "author": "Paul Graham",
+    "text": "Do things that don't scale.",
+    "code": false
+  },
+  {
+    "author": "Jeff Bezos",
+    "text": "Your brand is what people say about you when you're not in the room.",
+    "code": false
+  },
+  {
+    "author": "Jeff Bezos",
+    "text": "If you double the number of experiments you do per year, you're going to double your inventiveness.",
+    "code": false
+  },
+  {
+    "author": "Peter Drucker",
+    "text": "What gets measured gets managed.",
+    "code": false
+  },
+  {
+    "author": "Peter Drucker",
+    "text": "There is nothing so useless as doing efficiently that which should not be done at all.",
+    "code": false
+  },
+  {
+    "author": "Andy Grove",
+    "text": "Only the paranoid survive.",
+    "code": false
+  },
+  {
+    "author": "Cal Newport",
+    "text": "Clarity about what matters provides clarity about what does not.",
+    "code": false
+  },
+  {
+    "author": "James Clear",
+    "text": "You do not rise to the level of your goals. You fall to the level of your systems.",
+    "code": false
+  },
+  {
+    "author": "James Clear",
+    "text": "Every action you take is a vote for the type of person you wish to become.",
+    "code": false
+  },
+  {
+    "author": "Seth Godin",
+    "text": "The only thing worse than starting something and failing is not starting something.",
+    "code": false
+  },
+  {
+    "author": "Edsger Dijkstra",
+    "text": "Simplicity is a great virtue, but it requires hard work to achieve it.",
+    "code": true
+  },
+  {
+    "author": "Edsger Dijkstra",
+    "text": "The computing scientist's main challenge is not to get confused by the complexities of his own making.",
+    "code": true
+  },
+  {
+    "author": "Fred Brooks",
+    "text": "Adding manpower to a late software project makes it later.",
+    "code": true
+  },
+  {
+    "author": "Fred Brooks",
+    "text": "The bearing of a child takes nine months, no matter how many women are assigned.",
+    "code": true
+  },
+  {
+    "author": "Brian Kernighan",
+    "text": "Debugging is twice as hard as writing the code in the first place.",
+    "code": true
+  },
+  {
+    "author": "C.A.R. Hoare",
+    "text": "There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies.",
+    "code": true
+  },
+  {
+    "author": "Jamie Zawinski",
+    "text": "Some people, when confronted with a problem, think I know, I'll use regular expressions. Now they have two problems.",
+    "code": true
+  },
+  {
+    "author": "Bjarne Stroustrup",
+    "text": "There are only two kinds of languages: the ones people complain about and the ones nobody uses.",
+    "code": true
+  },
+  {
+    "author": "Alan Kay",
+    "text": "The best way to predict the future is to invent it.",
+    "code": false
+  },
+  {
+    "author": "Alan Kay",
+    "text": "Simple things should be simple, complex things should be possible.",
+    "code": false
+  },
+  {
+    "author": "Alan Perlis",
+    "text": "Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.",
+    "code": true
+  },
+  {
+    "author": "Alan Perlis",
+    "text": "A language that doesn't affect the way you think about programming is not worth knowing.",
+    "code": true
+  },
+  {
+    "author": "Donald Knuth",
+    "text": "Science is what we understand well enough to explain to a computer. Art is everything else we do.",
+    "code": true
+  },
+  {
+    "author": "Ken Thompson",
+    "text": "When in doubt, use brute force.",
+    "code": true
+  },
+  {
+    "author": "Rob Pike",
+    "text": "Fancy algorithms are slow when n is small, and n is usually small.",
+    "code": true
+  },
+  {
+    "author": "Dennis Ritchie",
+    "text": "UNIX is simple. It just takes a genius to understand its simplicity.",
+    "code": true
+  },
+  {
+    "author": "Richard Stallman",
+    "text": "If programmers deserve to be rewarded for creating innovative programs, by the same token they deserve to be punished if they restrict the use of these programs.",
+    "code": true
+  },
+  {
+    "author": "Larry Wall",
+    "text": "There's more than one way to do it.",
+    "code": true
+  },
+  {
+    "author": "Larry Wall",
+    "text": "The three chief virtues of a programmer are laziness, impatience, and hubris.",
+    "code": true
+  },
+  {
+    "author": "Eric S. Raymond",
+    "text": "Given enough eyeballs, all bugs are shallow.",
+    "code": true
+  },
+  {
+    "author": "Ward Cunningham",
+    "text": "The best way to get the right answer on the Internet is not to ask a question, it's to post the wrong answer.",
+    "code": true
+  },
+  {
+    "author": "Uncle Bob",
+    "text": "Clean code always looks like it was written by someone who cares.",
+    "code": true
+  },
+  {
+    "author": "Sandi Metz",
+    "text": "Duplication is far cheaper than the wrong abstraction.",
+    "code": true
+  },
+  {
+    "author": "Rich Hickey",
+    "text": "Programming is not about typing, it's about thinking.",
+    "code": true
+  },
+  {
+    "author": "John Ousterhout",
+    "text": "A little bit of slope makes up for a lot of y-intercept.",
+    "code": true
+  },
+  {
+    "author": "Dan Abramov",
+    "text": "Don't be afraid to throw one away. You'll do it anyway.",
+    "code": true
+  },
+  {
+    "author": "Joel Spolsky",
+    "text": "It's harder to read code than to write it.",
+    "code": true
+  },
+  {
+    "author": "Jeff Atwood",
+    "text": "We should forget about small efficiencies, say about 97% of the time. Yet Atwood still ships.",
+    "code": true
+  },
+  {
+    "author": "Bill Gates",
+    "text": "Most people overestimate what they can do in one year and underestimate what they can do in ten.",
+    "code": false
+  },
+  {
+    "author": "Bill Gates",
+    "text": "Your most unhappy customers are your greatest source of learning.",
+    "code": false
+  },
+  {
+    "author": "Elon Musk",
+    "text": "If you're not failing, you're not innovating enough.",
+    "code": false
+  },
+  {
+    "author": "Elon Musk",
+    "text": "The first step is to establish that something is possible, then probability will occur.",
+    "code": false
+  },
+  {
+    "author": "Reid Hoffman",
+    "text": "If you are not embarrassed by the first version of your product, you've launched too late.",
+    "code": false
+  },
+  {
+    "author": "Sam Altman",
+    "text": "Idea generation is a natural consequence of having a lot of problems.",
+    "code": false
+  },
+  {
+    "author": "Sam Altman",
+    "text": "Compound yourself.",
+    "code": false
+  },
+  {
+    "author": "Jason Fried",
+    "text": "Work doesn't happen at work.",
+    "code": false
+  },
+  {
+    "author": "DHH",
+    "text": "Constraints are advantages in disguise.",
+    "code": false
+  },
+  {
+    "author": "DHH",
+    "text": "The best time to start was yesterday. The next best is now, with less.",
+    "code": false
+  },
+  {
+    "author": "Eric Ries",
+    "text": "The only way to win is to learn faster than anyone else.",
+    "code": false
+  },
+  {
+    "author": "Steve Blank",
+    "text": "No business plan survives first contact with customers.",
+    "code": false
+  },
+  {
+    "author": "Marc Andreessen",
+    "text": "Software is eating the world.",
+    "code": true
+  },
+  {
+    "author": "Naval Ravikant",
+    "text": "Play long-term games with long-term people.",
+    "code": false
+  },
+  {
+    "author": "Naval Ravikant",
+    "text": "Desire is a contract you make with yourself to be unhappy until you get what you want.",
+    "code": false
+  },
+  {
+    "author": "Nassim Taleb",
+    "text": "The three most harmful addictions are heroin, carbohydrates, and a monthly salary.",
+    "code": false
+  },
+  {
+    "author": "Nassim Taleb",
+    "text": "If you see fraud and do not say fraud, you are a fraud.",
+    "code": false
+  },
+  {
+    "author": "Charlie Munger",
+    "text": "Show me the incentive and I will show you the outcome.",
+    "code": false
+  },
+  {
+    "author": "Warren Buffett",
+    "text": "The difference between successful people and really successful people is that really successful people say no to almost everything.",
+    "code": false
+  },
+  {
+    "author": "Warren Buffett",
+    "text": "Be fearful when others are greedy, and greedy when others are fearful.",
+    "code": false
+  },
+  {
+    "author": "Jony Ive",
+    "text": "Simplicity is not the absence of clutter. That's a consequence of simplicity.",
+    "code": false
+  },
+  {
+    "author": "Don Norman",
+    "text": "The real problem with the interface is that it is an interface.",
+    "code": false
+  },
+  {
+    "author": "Edward Tufte",
+    "text": "Above all else, show the data.",
+    "code": false
+  },
+  {
+    "author": "Edward Tufte",
+    "text": "Clutter and confusion are failures of design, not attributes of information.",
+    "code": false
+  },
+  {
+    "author": "Bret Victor",
+    "text": "Creators need an immediate connection to what they create.",
+    "code": true
+  },
+  {
+    "author": "Bret Victor",
+    "text": "The most dangerous thought you can have as a creative person is to think you know what you're doing.",
+    "code": true
+  },
+  {
+    "author": "John Gall",
+    "text": "A complex system that works is invariably found to have evolved from a simple system that worked.",
+    "code": true
+  },
+  {
+    "author": "Gall's Law",
+    "text": "A complex system designed from scratch never works and cannot be patched up to make it work.",
+    "code": true
+  },
+  {
+    "author": "Conway's Law",
+    "text": "Organizations design systems that copy the communication structure of those organizations.",
+    "code": true
+  },
+  {
+    "author": "Postel's Law",
+    "text": "Be conservative in what you send, be liberal in what you accept.",
+    "code": true
+  },
+  {
+    "author": "Hofstadter's Law",
+    "text": "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+    "code": true
+  },
+  {
+    "author": "Parkinson's Law",
+    "text": "Work expands so as to fill the time available for its completion.",
+    "code": false
+  },
+  {
+    "author": "Goodhart's Law",
+    "text": "When a measure becomes a target, it ceases to be a good measure.",
+    "code": false
+  },
+  {
+    "author": "Brooks's Law",
+    "text": "Adding people to a late project makes it later.",
+    "code": true
+  },
+  {
+    "author": "YAGNI",
+    "text": "You aren't gonna need it.",
+    "code": true
+  },
+  {
+    "author": "Kent Beck",
+    "text": "Optimism is an occupational hazard of programming. Feedback is the treatment.",
+    "code": true
+  },
+  {
+    "author": "Ward Cunningham",
+    "text": "Technical debt is the extra development it takes to add a feature to a messy system.",
+    "code": true
+  },
+  {
+    "author": "Martin Fowler",
+    "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "code": true
+  },
+  {
+    "author": "Andrew Hunt",
+    "text": "Don't live with broken windows.",
+    "code": true
+  },
+  {
+    "author": "Dave Thomas",
+    "text": "DRY: every piece of knowledge must have a single, unambiguous, authoritative representation.",
+    "code": true
+  },
+  {
+    "author": "Gerald Weinberg",
+    "text": "If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.",
+    "code": true
+  },
+  {
+    "author": "Tony Hoare",
+    "text": "I conclude that there are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies.",
+    "code": true
+  },
+  {
+    "author": "Leslie Lamport",
+    "text": "A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable.",
+    "code": true
+  },
+  {
+    "author": "John Carmack",
+    "text": "The cost of adding a feature isn't just the time it takes to code it.",
+    "code": true
+  },
+  {
+    "author": "John Carmack",
+    "text": "Focused, hard work is the real key to success.",
+    "code": false
+  },
+  {
+    "author": "Michael Abrash",
+    "text": "The best optimizer is between your ears.",
+    "code": true
+  },
+  {
+    "author": "Casey Muratori",
+    "text": "Performance is a feature.",
+    "code": true
+  },
+  {
+    "author": "Jonathan Blow",
+    "text": "If you want to make a game, make a game. Don't make an engine.",
+    "code": true
+  },
+  {
+    "author": "Sid Meier",
+    "text": "A game is a series of interesting decisions.",
+    "code": false
+  },
+  {
+    "author": "Shigeru Miyamoto",
+    "text": "A good idea is something that does not solve just one single problem, but rather can solve multiple problems at once.",
+    "code": false
+  },
+  {
+    "author": "Gabe Newell",
+    "text": "The best way to predict the future is to invent it, then ship the client.",
+    "code": true
+  },
+  {
+    "author": "Tim Berners-Lee",
+    "text": "The Web does not just connect machines, it connects people.",
+    "code": true
+  },
+  {
+    "author": "Vint Cerf",
+    "text": "The Internet is for everyone.",
+    "code": true
+  },
+  {
+    "author": "Ada Lovelace",
+    "text": "The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform.",
+    "code": true
+  },
+  {
+    "author": "Margaret Hamilton",
+    "text": "There was no choice but to be pioneers.",
+    "code": true
+  },
+  {
+    "author": "Katherine Johnson",
+    "text": "You are as good as anyone in this town, but you are no better.",
+    "code": false
+  },
+  {
+    "author": "Radia Perlman",
+    "text": "Don't call me the mother of the Internet.",
+    "code": true
+  },
+  {
+    "author": "Barbara Liskov",
+    "text": "An abstract data type is characterized by a set of operations.",
+    "code": true
+  },
+  {
+    "author": "Frances Allen",
+    "text": "Compilers are the unsung heroes of computing.",
+    "code": true
+  },
+  {
+    "author": "Donald Knuth",
+    "text": "The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly.",
+    "code": true
+  },
+  {
+    "author": "Peter Norvig",
+    "text": "To write a good AI you have to have a good model of the world, and a good model of the user's goals.",
+    "code": true
+  },
+  {
+    "author": "Geoffrey Hinton",
+    "text": "In the long run, curiosity-driven research pays off.",
+    "code": true
+  },
+  {
+    "author": "Yann LeCun",
+    "text": "If intelligence is a cake, the bulk of the cake is unsupervised learning.",
+    "code": true
+  },
+  {
+    "author": "Andrej Karpathy",
+    "text": "The hottest new programming language is English.",
+    "code": true
+  },
+  {
+    "author": "Ilya Sutskever",
+    "text": "The thing that I am most excited about is the idea that we can actually understand how the mind works.",
+    "code": true
+  },
+  {
+    "author": "Cal Newport",
+    "text": "Deep work is the ability to focus without distraction on a cognitively demanding task.",
+    "code": false
+  },
+  {
+    "author": "Cal Newport",
+    "text": "Who you are, what you think, feel, and do, what you love, is the sum of what you focus on.",
+    "code": false
+  },
+  {
+    "author": "Mihaly Csikszentmihalyi",
+    "text": "The best moments in our lives are not the passive, receptive, relaxing times.",
+    "code": false
+  },
+  {
+    "author": "Mihaly Csikszentmihalyi",
+    "text": "Flow is the state in which people are so involved in an activity that nothing else seems to matter.",
+    "code": false
+  }
+]
