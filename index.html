@@ -2236,7 +2236,6 @@
       .clipboard-grid { grid-template-columns: 1fr; }
     }
   </style>
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 
@@ -2745,7 +2744,8 @@ console.log(hits);</textarea>
       <span class="waitlist-kicker">Early access</span>
       <h2>Be first at the notch.</h2>
       <p>Join the BuildNotch waitlist for launch news, early access, and the first Windows release.</p>
-      <form class="waitlist-form" id="waitlistForm" method="POST" onsubmit="event.preventDefault()">
+      <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xjykwzpj" method="POST">
+        <input type="hidden" name="_subject" value="New BuildNotch waitlist signup" />
         <input type="email" name="email" autocomplete="email" placeholder="you@example.com" aria-label="Email address" required />
         <button type="submit">Join the waitlist</button>
       </form>
