@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>BuildNotch — The notch Windows never gave you</title>
   <meta name="description" content="BuildNotch — a Mac-style productivity notch for Windows. Music, tasks, focus, and your projects — one hover away." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2231,8 +2231,64 @@
       .hero-ctas { flex-direction: column; align-items: center; }
     }
     @media (max-width: 560px) {
-      .di-grid { display: flex; }
-      .desktop-wall { min-height: 520px; }
+      body { background-attachment: scroll; }
+      .nav {
+        width: calc(100% - 24px); top: 8px; margin-top: 8px;
+        padding: 9px 10px 9px 12px; border-radius: 16px;
+      }
+      .brand { gap: 6px; font-size: 15px; }
+      .brand-logo { width: 34px; height: 34px; }
+      .nav-right { gap: 8px; }
+      .theme-toggle { width: 40px; height: 40px; }
+      .nav-cta {
+        min-height: 40px; display: inline-flex; align-items: center;
+        padding: 0 13px; font-size: 12px; white-space: nowrap;
+      }
+      .hero { padding: 56px 18px 64px; }
+      .hero h1 { font-size: clamp(38px, 12vw, 52px); line-height: 1.03; text-wrap: balance; }
+      .hero-sub { margin-top: 18px; font-size: 16px; line-height: 1.55; }
+      .hero-ctas { width: 100%; margin-top: 26px; gap: 8px; }
+      .hero-ctas .btn { width: min(100%, 280px); min-height: 48px; display: grid; place-items: center; }
+      .desktop-demo { width: 100%; margin-top: 42px; border-radius: 16px; }
+      .desktop-wall { aspect-ratio: auto; height: 520px; min-height: 0; }
+      .desktop-demo > .notch { width: 100%; }
+      .notch.open .di-shell { width: 100% !important; max-height: 500px; }
+      .di-grid {
+        display: flex; gap: 10px; padding: 12px;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+      }
+      .di-card { flex: 0 0 min(78vw, 280px); scroll-snap-align: center; }
+      .features-stack { padding: 0 18px; }
+      .feature { gap: 24px; padding: 48px 0; }
+      .feature-head { max-width: none; }
+      .feature-head h2 { font-size: clamp(30px, 9vw, 40px); letter-spacing: -.035em; text-wrap: balance; }
+      .feature-head p { max-width: none; margin-top: 14px; font-size: 16px; }
+      .feat-no { width: 32px; height: 32px; margin-bottom: 14px; }
+      .feature .np-stage, .feature .feature-shot { width: 100%; max-width: 100%; }
+      .feature-shot .mini-body { max-width: 100%; }
+      .pomo-stage { width: 100%; min-width: 0; }
+      .pomo-theme-row {
+        width: calc(100vw - 36px); max-width: 100%; justify-content: flex-start;
+        overflow-x: auto; padding-bottom: 6px; scrollbar-width: none;
+      }
+      .pomo-theme-row::-webkit-scrollbar { display: none; }
+      .pomo-theme-row .settings-btn { min-height: 44px; }
+      .more-features { padding: 48px 18px 28px; }
+      .more-card {
+        grid-template-rows: auto auto auto; gap: 12px;
+        padding-top: 28px; padding-bottom: 32px;
+      }
+      .more-card .mini-body, .more-card .git-app-card {
+        width: min(280px, 100%); align-self: auto;
+      }
+      .more-card h3 { min-height: 0; font-size: 21px; }
+      .waitlist { padding: 48px 16px max(80px, env(safe-area-inset-bottom)); }
+      .waitlist-card { padding: 34px 20px; border-radius: 20px; }
+      .waitlist-card h2 { font-size: clamp(30px, 10vw, 40px); }
+      .waitlist-card > p { margin: 14px auto 24px; font-size: 15px; }
+      .waitlist-form { grid-template-columns: 1fr; }
+      .waitlist-form input, .waitlist-form button { width: 100%; min-height: 50px; font-size: 16px; }
+      .footer { padding-left: 18px; padding-right: 18px; text-align: center; }
       .clipboard-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -2544,19 +2600,13 @@ console.log(sessions);</textarea>
   <section class="feature" id="f-todos">
     <div class="feature-head">
       <span class="feat-no">02</span>
-      <h2>Review tasks</h2>
-      <p>Add any project that you're working on, and keep track of every task.</p>
+      <h2>Your AI apps, found for you.</h2>
+      <p>BuildNotch automatically detects supported AI apps installed on your computer and keeps them one shortcut away.</p>
     </div>
     <div class="feature-shot">
-      <div class="mini-body" data-w="todos">
-        <div class="proj-row">
-          <img class="legend-logo" src="src-winui/Assets/tasks.png" alt="" />
-          <button class="proj-tab on" type="button" data-proj="peak">Peak</button>
-          <button class="proj-tab" type="button" data-proj="client">Client</button>
-          <button class="cell-plus" type="button" aria-label="New project"><img class="ph-icon" src="src-winui/Assets/plus.png" alt="" /></button>
-        </div>
-        <ul class="todo-list"></ul>
-        <input class="todo-input" type="text" placeholder="+ Add a task…" maxlength="60" />
+      <div class="mini-body" data-w="aideck">
+        <div class="cell-legend">Detected AI apps</div>
+        <div class="ai-grid"></div>
       </div>
     </div>
   </section>
@@ -2644,12 +2694,16 @@ console.log(sessions);</textarea>
   <section class="more-features" id="more">
     <div class="more-grid">
       <article class="more-card" id="f-ai">
-        <div class="mini-body" data-w="aideck">
-          <div class="cell-legend">AI</div>
-          <div class="ai-grid"></div>
+        <div class="mini-body" data-w="todos">
+          <div class="proj-row">
+            <button class="proj-tab on" type="button" data-proj="peak">Peak</button>
+            <button class="proj-tab" type="button" data-proj="client">Client</button>
+          </div>
+          <ul class="todo-list"></ul>
+          <input class="todo-input" type="text" placeholder="+ Add a task…" maxlength="60" />
         </div>
-        <h3>Your agents, one key away.</h3>
-        <p>ChatGPT, Claude, and your own tools, as shortcuts on the notch.</p>
+        <h3>Review tasks.</h3>
+        <p>Organize work by project and keep the next task close.</p>
       </article>
       <article class="more-card" id="f-notes">
         <div class="mini-body note-demo">
@@ -2741,7 +2795,6 @@ console.log(hits);</textarea>
   <!-- ===== WAITLIST ===== -->
   <section class="waitlist" id="waitlist">
     <article class="waitlist-card">
-      <span class="waitlist-kicker">Early access</span>
       <h2>Be first at the notch.</h2>
       <p>Join the BuildNotch waitlist for launch news, early access, and the first Windows release.</p>
       <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xjykwzpj" method="POST">
